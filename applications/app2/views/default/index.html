@@ -1,0 +1,15 @@
+{{extend 'layout.html'}}
+<body style="background-color:powderblue"; background="">
+<h2>
+    previous post
+</h2>
+<hr>
+<table class = 'table'>
+    {{for row in rows:}}
+    <tr>
+        <td><a href="{{=URL('show',args=row.id)}}">{{=row.title}}</a></td>
+        <td>{{=row.body}}</td>
+        <td>{{=row.created_on}}</td>
+    </tr>
+    {{pass}}
+</table>

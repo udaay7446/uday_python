@@ -1,0 +1,26 @@
+{{extend 'layout.html'}}
+
+<h2>
+    {{=post.title}}
+</h2>
+<i style="background-color:yellow">posted on {{=post.created_on}} by {{=post.created_by.first_name}} {{=post.created_by.last_name}} </i>
+<div>
+{{=(post.body)}}
+</div>
+<div>
+    {{=post.image.827ad82fd0649186.31302d31322d323031372e706e67.png}}
+</div>
+<div>
+    Comments:
+</div>
+{{for comment in comments:}}
+<div class = "container" style="background-color:pink";>
+    {{=comment.created_by.first_name}}     {{=comment.created_by.last_name}}
+    on {{=comment.created_on}} says:
+    <div>
+        {{=comment.comm}}
+    </div>
+    <hr>
+</div>
+{{pass}}
+{{=form}}
